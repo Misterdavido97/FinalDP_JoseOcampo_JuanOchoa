@@ -99,9 +99,9 @@ namespace FinalDP_JoseOcampo_JuanOchoa.Core.ViewModels
         {
             await base.Initialize();
 
-            _a = 2;
-            _b = 8;
-            _c = 3;
+            A = 2;
+            B = 8;
+            C = 3;
             Recalculate();
         }
 

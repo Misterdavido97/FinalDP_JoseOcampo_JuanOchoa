@@ -17,6 +17,14 @@ namespace FinalDP_JoseOcampo_JuanOchoa.Core.Services
                 double PositiveNumerator = -b + Root;
                 double NegativeNumerator = -b - Root;
                 double Denominator = (2 * a);
+                if (Denominator == 0)
+                {
+                    return new QuadraticFunctionResult()
+                    {
+                        X1 = 0,
+                        X2 = 0
+                    };
+                }
 
                 double X1 = PositiveNumerator / Denominator;
                 double X2 = NegativeNumerator / Denominator;

@@ -114,6 +114,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\splash.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FinalDP_JoseOcampo_JuanOchoa.Core\FinalDP_JoseOcampo_JuanOchoa.Core.csproj">
+      <Project>{13c94067-9952-404f-9a1e-14316d296dec}</Project>
+      <Name>FinalDP_JoseOcampo_JuanOchoa.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.

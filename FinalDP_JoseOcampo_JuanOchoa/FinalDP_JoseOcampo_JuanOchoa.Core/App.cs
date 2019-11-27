@@ -1,9 +1,6 @@
 ﻿using FinalDP_JoseOcampo_JuanOchoa.Core.ViewModels;
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FinalDP_JoseOcampo_JuanOchoa.Core
 {

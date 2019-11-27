@@ -1,10 +1,9 @@
 ﻿using FinalDP_JoseOcampo_JuanOchoa.Core.Models;
 using FinalDP_JoseOcampo_JuanOchoa.Core.Services;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace FinalDP_JoseOcampo_JuanOchoa.Core.ViewModels
 {
@@ -18,6 +17,7 @@ namespace FinalDP_JoseOcampo_JuanOchoa.Core.ViewModels
         private double _c;
         private double _x1;
         private double _x2;
+        private MvxCommand _calculateCommand;
 
         #endregion
 
@@ -39,7 +39,6 @@ namespace FinalDP_JoseOcampo_JuanOchoa.Core.ViewModels
             {
                 _a = value;
                 RaisePropertyChanged(() => A);
-                Recalculate();
             }
         }
 
@@ -50,7 +49,6 @@ namespace FinalDP_JoseOcampo_JuanOchoa.Core.ViewModels
             {
                 _b = value;
                 RaisePropertyChanged(() => B);
-                Recalculate();
             }
         }
 
@@ -61,7 +59,6 @@ namespace FinalDP_JoseOcampo_JuanOchoa.Core.ViewModels
             {
                 _c = value;
                 RaisePropertyChanged(() => C);
-                Recalculate();
             }
         }
 
@@ -85,17 +82,26 @@ namespace FinalDP_JoseOcampo_JuanOchoa.Core.ViewModels
             }
         }
 
+        public ICommand CalculateCommand
+        {
+            get
+            {
+                _calculateCommand = _calculateCommand ?? new MvxCommand(Recalculate);
+                return _calculateCommand;
+            }
+        }
+
         #endregion
 
         #region Public Methods
 
-        public async override Task Initialize()
+        public override async Task Initialize()
         {
             await base.Initialize();
 
-            A = 2;
-            B = 8;
-            C = 3;
+            _a = 2;
+            _b = 8;
+            _c = 3;
             Recalculate();
         }
 
